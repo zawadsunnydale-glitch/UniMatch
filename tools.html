@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Application Tools — UniMatch</title>
-<meta name="description" content="AI-assisted search, quiz, subject planner, eligibility checker, career mapping, ECA advisor and cost calculator — all free.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,7 +16,6 @@
       <div class="section-head reveal">
         <span class="eyebrow">Free application tools</span>
         <h2>Everything you need to plan, match, and cost your degree</h2>
-        <p>No sign-up. Every tool below runs instantly in your browser against our curated university and curriculum database.</p>
       </div>
 
       <div class="tool-tabs" id="toolTabs">
@@ -26,238 +24,41 @@
         <button class="tool-tab" data-tab="planner">Subject Planner</button>
         <button class="tool-tab" data-tab="eligibility">Eligibility</button>
         <button class="tool-tab" data-tab="career">Career Map</button>
-        <button class="tool-tab" data-tab="eca">ECA Advisor</button>
-        <button class="tool-tab" data-tab="cost">Cost Matrix</button>
-        <button class="tool-tab" data-tab="rounds">Strategy Round</button>
-        <button class="tool-tab" data-tab="readiness">Readiness</button>
       </div>
 
       <div class="tool-panel active" id="panel-search">
-        <div class="tool-hero">
-          <div>
-            <span class="tool-tag">Semantic Router Mockup</span>
-            <h2>Search universities using natural language descriptors</h2>
-            <p>Our mock search engine scans university criteria lines to reveal direct matching items instantly.</p>
-          </div>
-        </div>
         <div class="search-input-wrap" style="max-width:720px;margin-bottom:34px;">
-          <input type="text" class="search-input" id="toolSearchInput" placeholder="e.g. affordable mechanical engineering programs in Canada or Europe...">
+          <input type="text" class="search-input" id="toolSearchInput" placeholder="e.g. affordable mechanical engineering programs...">
           <button class="search-submit" id="toolSearchBtn">→</button>
         </div>
-        <div id="searchResultsCount" style="margin-bottom:16px;font-family:var(--font-mono);font-size:.82rem;color:var(--cream-30);"></div>
         <div class="career-grid" id="searchResultsGrid"></div>
       </div>
 
       <div class="tool-panel" id="panel-quiz">
-        <div class="tool-hero">
-          <div>
-            <span class="tool-tag tag-gold">2-Minute Shortlist Engine</span>
-            <h2>Find matched tracks across our university catalog</h2>
-            <p>Select your operational filters below. The matching algorithm strips away mismatched options in real-time.</p>
-          </div>
-        </div>
         <div class="panel-grid">
           <div>
             <div class="field-block">
-              <span class="field-label">Target Field / Study Area</span>
+              <span class="field-label">Target Field</span>
               <select class="input-line" id="quizFieldSelect"></select>
             </div>
             <div class="field-block">
-              <span class="field-label">Destination Region</span>
-              <select class="input-line" id="quizDestSelect"></select>
-            </div>
-            <div class="field-block">
-              <span class="field-label">Absolute Maximum Budget / Year (including living costs)</span>
-              <div class="slider-val-row"><span id="quizBudgetVal"></span></div>
+              <span class="field-label">Maximum Budget / Year</span>
               <input type="range" id="quizBudgetSlider" style="width:100%;">
             </div>
           </div>
           <div>
-            <div style="display:flex;justify-content:between;align-items:center;margin-bottom:14px;">
-              <span class="field-label" style="margin:0;">Dynamic Shortlist Results</span>
-              <span class="badge badge-teal" id="quizMatchCount">0 matches</span>
-            </div>
-            <div id="quizResultsGrid" style="display:flex;flex-direction:column;gap:14px;"></div>
+            <div id="quizResultsGrid"></div>
           </div>
         </div>
       </div>
-
-      <div class="tool-panel" id="panel-planner">
-        <div class="tool-hero">
-          <div>
-            <span class="tool-tag tag-teal">Curriculum Selection Engine</span>
-            <h2>Map high school subjects to future degree opportunities</h2>
-            <p>Select subjects below to instantly isolate which target technical pipelines open up or close across global institutions.</p>
-          </div>
-        </div>
-        <div class="panel-grid">
-          <div>
-            <span class="field-label">Your high school subject choices</span>
-            <div id="plannerCheckboxes" style="display:flex;flex-direction:column;gap:10px;margin-top:10px;"></div>
-          </div>
-          <div>
-            <span class="field-label">Available degree pathways matching your vector</span>
-            <div class="career-grid" id="plannerResultsGrid" style="margin-top:14px;grid-template-columns:1fr;"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tool-panel" id="panel-eligibility">
-        <div class="tool-hero">
-          <div>
-            <span class="tool-tag">Requirement Auditor</span>
-            <h2>Audit your exact academic qualifications against prerequisites</h2>
-            <p>Pick a specific program below, then check off your subject marks to confirm your dynamic matching status.</p>
-          </div>
-        </div>
-        <div class="panel-grid">
-          <div>
-            <div class="field-block">
-              <span class="field-label">Select Target Institution &amp; Program</span>
-              <select class="input-line" id="eligUniSelect"></select>
-            </div>
-            <span class="field-label">Check the subjects you cleared with a passing score</span>
-            <div id="eligCheckboxes" style="display:flex;flex-direction:column;gap:10px;margin-top:10px;"></div>
-          </div>
-          <div>
-            <span class="field-label">Dynamic Admission Audit Result</span>
-            <div class="result-panel" id="eligResultStatus" style="margin-top:14px;"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tool-panel" id="panel-career">
-        <div class="tool-hero">
-          <div>
-            <span class="tool-tag">Trajectory Explorer</span>
-            <h2>Deep dive into fields, salaries, and university links</h2>
-            <p>Select a core study field below to inspect typical career growth vectors, industry salaries, and specific matched target colleges.</p>
-          </div>
-        </div>
-        <div class="panel-grid" style="grid-template-columns:1fr 1.6fr;">
-          <div>
-            <span class="field-label">Select Field</span>
-            <div id="careerListMenu" style="display:flex;flex-direction:column;gap:8px;margin-top:10px;"></div>
-          </div>
-          <div>
-            <div class="result-panel" id="careerDetailPanel"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tool-panel" id="panel-eca">
-        <div class="tool-hero">
-          <div>
-            <span class="tool-tag tag-gold">Extracurricular Strategy Builder</span>
-            <h2>Optimize your extracurricular portfolio profile hooks</h2>
-            <p>Select your field and target university tier. The advisor displays custom portfolio adjustments needed to stand out.</p>
-          </div>
-        </div>
-        <div class="panel-grid">
-          <div>
-            <div class="field-block">
-              <span class="field-label">Target Study Track</span>
-              <select class="input-line" id="ecaFieldSelect"></select>
-            </div>
-            <div class="field-block">
-              <span class="field-label">Target Institutional Competitiveness Tier</span>
-              <select class="input-line" id="ecaTierSelect">
-                <option value="1">Tier 1: Global Elite (Ivy League, Oxbridge, top 20)</option>
-                <option value="2">Tier 2: Highly Competitive (Top 100 global, premium public)</option>
-                <option value="3">Tier 3: Standard Admissions (Broad global access match)</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <span class="field-label">Custom Extracurricular Matrix Roadmap</span>
-            <div class="result-panel" id="ecaResultPanel" style="margin-top:14px;"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tool-panel" id="panel-cost">
-        <div class="tool-hero">
-          <div>
-            <span class="tool-tag tag-gold">Out-of-Pocket Expenditure Matrix</span>
-            <h2>Calculate multi-variable cost realities instantly</h2>
-            <p>Adjust tuition sliders, baseline living costs, and funding waivers to see your true financial requirements.</p>
-          </div>
-        </div>
-        <div class="panel-grid">
-          <div>
-            <div class="field-block">
-              <span class="field-label">Select Target University Profile</span>
-              <select class="input-line" id="costUniSelect"></select>
-            </div>
-            <div class="field-block">
-              <span class="field-label">Base Tuition Fees / Year (USD)</span>
-              <div class="slider-val-row"><span id="costTuitionVal"></span></div>
-              <input type="range" id="costTuitionSlider" style="width:100%;">
-            </div>
-            <div class="field-block">
-              <span class="field-label">Living &amp; Subsistence Costs / Month (USD)</span>
-              <div class="slider-val-row"><span id="costLivingVal"></span></div>
-              <input type="range" id="costLivingSlider" style="width:100%;">
-            </div>
-            <div class="field-block">
-              <span class="field-label">Tuition Scholarship / Waiver Level (%)</span>
-              <div class="slider-val-row"><span id="costWaiverVal"></span></div>
-              <input type="range" id="costWaiverSlider" style="width:100%;" min="0" max="100" step="5">
-            </div>
-          </div>
-          <div>
-            <span class="field-label">Total Out-of-Pocket Commitment Summary</span>
-            <div class="result-panel" style="margin-top:14px;">
-              <div id="costCalculationResult"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tool-panel" id="panel-rounds">
-        <div class="tool-hero">
-          <div>
-            <span class="tool-tag">Admissions Round Framework</span>
-            <h2>Evaluate application deadlines and strategic options</h2>
-            <p>Toggle between Early Decision, Early Action, and Regular Decision structures to evaluate timing mechanics.</p>
-          </div>
-        </div>
-        <div class="section-head" style="margin-bottom:26px;">
-          <span class="eyebrow">Application round strategy</span>
-          <h2 style="font-size:1.6rem;">ED vs. EA vs. RD</h2>
-        </div>
-        <div class="chip-row" id="roundChips" style="margin-bottom:18px;"></div>
-        <div class="result-panel" id="roundResult"></div>
-      </div>
-
-      <div class="tool-panel" id="panel-readiness">
-        <div class="tool-hero">
-          <div>
-            <span class="tool-tag tag-teal">Document Readiness Matrix</span>
-            <h2>Track your application's operational readiness</h2>
-            <p>Check off each document as it's ready — your progress ring updates live. Everything here saves to this browser only.</p>
-          </div>
-        </div>
-        <div class="panel-grid">
-          <div>
-            <div id="readinessChecklist"></div>
-          </div>
-          <div class="result-panel" style="text-align:center;">
-            <div id="readinessRingWrap"></div>
-            <p style="font-size:.85rem;color:var(--cream-45);margin-top:10px;">Saved locally in this browser — clear your browser data and this resets.</p>
-            <button class="btn btn-ghost btn-sm" id="exportProfileBtn" style="margin-top:16px;">Export my profile as JSON →</button>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 </main>
 
 <div id="site-footer"></div>
 
-<script src="js/data.js"></script>
-<script src="js/main.js"></script>
-<script src="js/tools.js"></script>
+<script src="data.js"></script>
+<script src="main.js"></script>
+<script src="tools.js"></script>
 </body>
 </html>
