@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div id=\"site-header\" data-active=\"\"></div>
+<div id="site-header" data-active="admissions"></div>
 
 <main>
   <section style="padding-bottom:0;">
@@ -103,19 +103,21 @@
   const panelBd = document.getElementById('bd');
   const panelAbroad = document.getElementById('abroad');
 
-  btnBd.addEventListener('click', () => {
-    panelBd.style.display = 'block';
-    panelAbroad.style.display = 'none';
-    btnBd.classList.add('active');
-    btnAbroad.classList.remove('active');
-  });
+  if(btnBd && btnAbroad && panelBd && panelAbroad) {
+    btnBd.addEventListener('click', () => {
+      panelBd.style.display = 'block';
+      panelAbroad.style.display = 'none';
+      btnBd.classList.add('active');
+      btnAbroad.classList.remove('active');
+    });
 
-  btnAbroad.addEventListener('click', () => {
-    panelBd.style.display = 'none';
-    panelAbroad.style.display = 'block';
-    btnAbroad.classList.add('active');
-    btnBd.classList.remove('active');
-  });
+    btnAbroad.addEventListener('click', () => {
+      panelBd.style.display = 'none';
+      panelAbroad.style.display = 'block';
+      btnAbroad.classList.add('active');
+      btnBd.classList.remove('active');
+    });
+  }
 </script>
 </body>
 </html>
