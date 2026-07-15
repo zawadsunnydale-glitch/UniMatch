@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Start Your Admissions — UniMatch</title>
-<meta name="description" content="Choose your path — apply to universities in Bangladesh or abroad — and see the matching timelines, tests, and tools.">
+<meta name="description" content="Choose your path — apply to universities in Bangladesh or abroad.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
       <div class="section-head center reveal">
         <span class="eyebrow" style="justify-content:center;">Admissions</span>
         <h2>Start your admissions process</h2>
-        <p>Most students run both tracks in parallel — a local backup and an abroad reach. Toggle between them below.</p>
+        <p>Most students run both tracks in parallel. Toggle between them below.</p>
       </div>
 
       <div class="path-grid reveal">
@@ -38,7 +38,6 @@
       <div class="section-head reveal">
         <span class="eyebrow">National Track</span>
         <h2>Bangladesh University Pipeline</h2>
-        <p>Key benchmarks for major public, engineering, and private university streams.</p>
       </div>
       <div class="pipeline-flow" id="bdPipeline"></div>
     </div>
@@ -49,75 +48,15 @@
       <div class="section-head reveal">
         <span class="eyebrow">Global Track</span>
         <h2>Study Abroad Application Pipeline</h2>
-        <p>Standard timelines for intake tracks across major international destinations.</p>
       </div>
       <div class="pipeline-flow" id="abroadPipeline"></div>
-    </div>
-  </section>
-
-  <section style="background:var(--slate-900);border-top:1px solid var(--slate-800);">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Next steps</span>
-        <h2>Action tools for your admissions pathway</h2>
-        <p>Jump directly into planning calculations or check your dynamic matches.</p>
-      </div>
-      <div class="career-grid reveal">
-        <a href="tools.html#quiz" class="career-card">
-          <div class="career-name">Take the Quick Match Quiz</div>
-          <div class="career-field">2 minutes → a ranked, explained shortlist.</div>
-        </a>
-        <a href="tools.html#eligibility" class="career-card">
-          <div class="career-name">Check subject eligibility</div>
-          <div class="career-field">Confirm your HSC / A-Level subjects clear program prerequisites.</div>
-        </a>
-        <a href="tools.html#cost" class="career-card">
-          <div class="career-name">Run the cost calculator</div>
-          <div class="career-field">Tuition + living costs, with a scholarship slider.</div>
-        </a>
-        <a href="visa.html" class="career-card">
-          <div class="career-name">Visa &amp; bank-sponsor planning</div>
-          <div class="career-field">Funds required and a deposit-timeline calculator.</div>
-        </a>
-        <a href="tools.html#eca" class="career-card">
-          <div class="career-name">Build your ECA roadmap</div>
-          <div class="career-field">Broad baseline + high-impact hooks for your target tier.</div>
-        </a>
-        <a href="rankings.html" class="career-card">
-          <div class="career-name">Compare global rankings</div>
-          <div class="career-field">QS, THE, US News and ARWU side-by-side.</div>
-        </a>
-      </div>
     </div>
   </section>
 </main>
 
 <div id="site-footer"></div>
 
-<script src="js/data.js"></script>
-<script src="js/main.js"></script>
-<script>
-  // Simple view controller logic for the track panels
-  const btnBd = document.getElementById('btnBd');
-  const btnAbroad = document.getElementById('btnAbroad');
-  const panelBd = document.getElementById('bd');
-  const panelAbroad = document.getElementById('abroad');
-
-  if(btnBd && btnAbroad && panelBd && panelAbroad) {
-    btnBd.addEventListener('click', () => {
-      panelBd.style.display = 'block';
-      panelAbroad.style.display = 'none';
-      btnBd.classList.add('active');
-      btnAbroad.classList.remove('active');
-    });
-
-    btnAbroad.addEventListener('click', () => {
-      panelBd.style.display = 'none';
-      panelAbroad.style.display = 'block';
-      btnAbroad.classList.add('active');
-      btnBd.classList.remove('active');
-    });
-  }
-</script>
+<script src="data.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
