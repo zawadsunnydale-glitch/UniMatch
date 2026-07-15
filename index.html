@@ -6,7 +6,7 @@
 <title>UniMatch — Find Your Perfect University in Minutes</title>
 <meta name="description" content="AI-assisted, 100% free university matching for HSC, Madrasha and A-Level students — no confusing rankings, no paywalls.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -14,7 +14,6 @@
 
 <main>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
@@ -33,151 +32,68 @@
           <li>HSC / A-Level ready</li>
         </ul>
       </div>
-
-      <div class="hero-visual">
-        <div class="ticket" id="heroTicket">
-          <div class="ticket-row">
-            <div>
-              <div class="ticket-label" id="heroTicketLabel">Your top match</div>
-              <div class="ticket-uni" id="heroTicketUni">Take the quiz to see it here</div>
-              <div class="ticket-loc" id="heroTicketLoc">No fabricated results — this stays empty until you tell us your goals</div>
-            </div>
-            <div class="ticket-score" id="heroTicketScore">—</div>
+      
+      <div class="hero-preview-pane">
+        <div class="pass reveal" style="padding:24px;border:1px solid var(--slate-800);background:rgba(10,16,30,.6);">
+          <div style="display:flex;justify-content:between;align-items:center;margin-bottom:16px;">
+            <span class="field-label" style="margin:0;">Your top match</span>
+            <span class="badge badge-teal">94% Fit</span>
           </div>
-          <div class="ticket-divider"></div>
-          <ul class="ticket-reasons" id="heroTicketReasons">
+          <h3 style="margin-bottom:4px;font-size:1.25rem;">Take the quiz to see it here</h3>
+          <p style="font-size:.85rem;color:var(--cream-45);margin-bottom:16px;">No fabricated results — this stays empty until you tell us your goals.</p>
+          <hr style="border:0;border-top:1px solid var(--slate-800);margin-bottom:16px;">
+          <ul class="feature-checklist" style="font-size:.82rem;gap:8px;">
             <li>Answers your destination, field &amp; budget</li>
             <li>Filters strictly — never shows a contradicting match</li>
             <li>Explains exactly why each school fits</li>
           </ul>
-          <div class="ticket-tags">
-            <span class="ticket-tag">QS</span>
-            <span class="ticket-tag">THE</span>
-            <span class="ticket-tag">US News</span>
-            <span class="ticket-tag">ARWU</span>
-          </div>
-        </div>
-        <p class="hero-visual-caption">— boarding pass to your best-fit campus —</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- DUAL SEARCH -->
-  <section style="padding-top:0;">
-    <div class="wrap panel-grid">
-      <div class="reveal">
-        <span class="eyebrow">Natural language</span>
-        <h3 style="font-family:var(--font-display);font-size:1.3rem;margin:12px 0 14px;">Search for universities in simple English</h3>
-        <div class="search-row">
-          <input class="input-line" id="homeSearchInput" placeholder="Describe your dream university…">
-          <button class="btn btn-primary" id="homeSearchBtn">→</button>
-        </div>
-        <p style="font-size:.82rem;color:var(--ink-45);margin-top:10px;">Try: "affordable computer science degrees in Europe"</p>
-      </div>
-      <div class="reveal">
-        <span class="eyebrow">Career subjects</span>
-        <h3 style="font-family:var(--font-display);font-size:1.3rem;margin:12px 0 14px;">Top career subjects of July 2026</h3>
-        <select class="input-line" id="homeCareerSelect"></select>
-        <p style="font-size:.82rem;color:var(--ink-45);margin-top:10px;">Pick a career to see its best-fit universities below.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- RANKINGS + CAREER PREVIEW -->
-  <section>
-    <div class="wrap panel-grid">
-      <div class="reveal">
-        <div class="field-block" style="display:flex;justify-content:space-between;align-items:center;">
-          <h3 style="font-family:var(--font-display);font-size:1.2rem;">Top Universities</h3>
-          <select class="input-line" style="width:auto;padding:8px 12px;font-size:.82rem;" id="homeRankSelect">
-            <option value="qs">QS World University Rankings</option>
-            <option value="the">Times Higher Education</option>
-            <option value="usnews">US News &amp; World Report</option>
-            <option value="arwu">ARWU Shanghai Ranking</option>
-          </select>
-        </div>
-        <ul id="homeRankList"></ul>
-      </div>
-      <div class="reveal">
-        <h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:16px;">Top Universities for your Career</h3>
-        <div id="homeCareerList"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUICK MATCH QUIZ BANNER -->
-  <section style="padding-top:0;">
-    <div class="wrap">
-      <div class="tool-hero reveal">
-        <div>
-          <span class="eyebrow">Quick Match Quiz</span>
-          <h2>Not sure where to start? Take the quiz.</h2>
-          <p>Answer a few friendly questions about your goals — we'll turn them into personalized university matches. No jargon, no endless forms.</p>
-        </div>
-        <div style="text-align:center;">
-          <a href="tools.html#quiz" class="btn btn-gold btn-shine">Take the Quiz →</a>
-          <p style="font-family:var(--font-mono);font-size:.75rem;color:var(--ink-45);margin-top:10px;">About 2 minutes · Works on mobile</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHY FMV -->
-  <section>
+  <section style="background:var(--slate-950);border-top:1px solid var(--slate-900);border-bottom:1px solid var(--slate-900);">
     <div class="wrap">
       <div class="section-head center reveal">
-        <span class="eyebrow" style="justify-content:center;">Why UniMatch</span>
-        <h2>Every advantage, none of the cost</h2>
-        <p>Traditional consultancies charge thousands and still gatekeep the data. We put it all on the table, for free.</p>
+        <span class="eyebrow" style="justify-content:center;">Built differently</span>
+        <h2>Search for universities in simple English</h2>
+        <p>UniMatch bypasses the algorithmic noise and traditional agent biases to put clear data filters directly into your hands.</p>
       </div>
-      <div class="compare-wrap reveal">
-        <table class="compare">
-          <thead>
-            <tr><th>Feature</th><th class="brand-col">UniMatch</th><th>Traditional Platforms</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>100% Free</td><td class="yes">✓</td><td class="no">✕</td></tr>
-            <tr><td>Full Cost Transparency</td><td class="yes">✓</td><td class="no">✕</td></tr>
-            <tr><td>Match Explanations</td><td class="yes">✓</td><td class="no">✕</td></tr>
-            <tr><td>Visa Guidance</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>Local Curriculum Support</td><td class="yes">✓</td><td class="no">✕</td></tr>
-          </tbody>
-        </table>
+      
+      <div style="max-width:680px;margin:0 auto 50px auto;" class="reveal">
+        <div class="search-input-wrap">
+          <input type="text" class="search-input" id="homeSearchInput" placeholder="Describe your dream university layout...">
+          <button class="search-submit" id="homeSearchBtn">→</button>
+        </div>
+        <div style="font-size:.8rem;color:var(--cream-30);margin-top:10px;text-align:center;">
+          Try: <span style="color:var(--gold-main);cursor:pointer;" onclick="document.getElementById('homeSearchInput').value=this.innerText;document.getElementById('homeSearchBtn').click();">"affordable computer science degrees in Europe"</span>
+        </div>
+      </div>
+
+      <div class="feature-grid reveal">
+        <div class="feature-card">
+          <h4>📊 Aggregated Rank Comparisons</h4>
+          <p>View QS, THE, US News, and ARWU tables combined in one view, avoiding reliance on a single biased ranking scale.</p>
+        </div>
+        <div class="feature-card">
+          <h4>🧩 Local Vector Eligibility</h4>
+          <p>We map standard local curriculum requirements directly against international university entry rules.</p>
+        </div>
+        <div class="feature-card">
+          <h4>💰 Total Budget Disclosures</h4>
+          <p>Calculates tuition fee metrics along with local housing and cost-of-living variables instantly.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- TOOLS GRID -->
-  <section style="padding-top:0;">
+  <section style="background:var(--slate-900);">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Free tools</span>
-        <h2>Everything you need, in one place</h2>
-      </div>
-      <div class="career-grid reveal" style="grid-template-columns:repeat(3,1fr);">
-        <a href="tools.html#cost" class="career-card">
-          <div class="career-name">Interactive Cost Calculator</div>
-          <div class="career-field">Real tuition + living costs with a live scholarship slider.</div>
-        </a>
-        <a href="tools.html#eligibility" class="career-card">
-          <div class="career-name">Subject Eligibility Engine</div>
-          <div class="career-field">Match your HSC / A-Level subjects to programs you qualify for.</div>
-        </a>
-        <a href="visa.html" class="career-card">
-          <div class="career-name">Visa Information Hub</div>
-          <div class="career-field">Processing times, funds and steps for top destinations.</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CAREER TO UNIVERSITY MAPPING -->
-  <section style="padding-top:0;">
-    <div class="wrap">
-      <div class="section-head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;max-width:none;flex-wrap:wrap;gap:10px;">
+      <div class="section-head reveal" style="display:flex;justify-content:between;align-items:flex-end;flex-wrap:wrap;gap:20px;">
         <div>
-          <span class="eyebrow">Career-to-university mapping</span>
-          <h2 style="margin-top:14px;">Pick a dream career and see your best-fit universities</h2>
+          <span class="eyebrow">Career subjects</span>
+          <h2>Explore fields & pathways</h2>
+          <p>See global degree matches organized by common academic subject categories.</p>
         </div>
         <a href="tools.html#career" class="btn btn-ghost btn-sm">Explore all →</a>
       </div>
@@ -185,7 +101,6 @@
     </div>
   </section>
 
-  <!-- ADMISSIONS CTA -->
   <section>
     <div class="wrap">
       <div class="section-head center reveal">
@@ -214,6 +129,15 @@
 
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
-<script src="js/home.js"></script>
+<script>
+  // Simple functional handle for the interactive homepage elements
+  document.getElementById('homeSearchBtn').addEventListener('click', () => {
+    const val = encodeURIComponent(document.getElementById('homeSearchInput').value);
+    window.location.href = `tools.html?q=${val}#search`;
+  });
+  document.getElementById('homeSearchInput').addEventListener('keypress', (e) => {
+    if(e.key === 'Enter') document.getElementById('homeSearchBtn').click();
+  });
+</script>
 </body>
 </html>
