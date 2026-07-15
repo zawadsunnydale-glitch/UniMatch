@@ -1,19 +1,6 @@
 /* Shared chrome: header + footer injected so every page stays in sync,
    plus small progressive-enhancement behaviours. */
 
-/* ---------- Google Sign-In ----------
-   PHASE 2 NOTE: This uses Google Identity Services' client-side flow, which
-   returns a signed ID token straight to the browser — no backend needed for
-   the sign-in button itself. BUT the profile below is only ever stored in
-   this browser's localStorage. There is no server session, so it won't
-   sync across devices and can't gate real server-side content. Wiring up
-   persistent accounts needs a backend to verify the ID token and issue a
-   real session (e.g. a Netlify Function + a small database).
-   To activate: create an OAuth Client ID in Google Cloud Console
-   (APIs & Services → Credentials → OAuth Client ID → Web application),
-   add your Netlify domain under "Authorized JavaScript origins", and paste
-   the client ID below. Client IDs are meant to be public — unlike API
-   keys/secrets, this one is safe to ship in frontend code. */
 const GOOGLE_CLIENT_ID = "YOUR_GOOGLE_OAUTH_CLIENT_ID.apps.googleusercontent.com";
 
 function decodeJwt(token){
@@ -57,7 +44,7 @@ function renderSignInState(){
   if (!configured){
     slot.innerHTML = `<button class="btn btn-ghost btn-sm" id="signInBtn">Sign In</button>`;
     document.getElementById("signInBtn").addEventListener("click", () => {
-      alert("Google Sign-In isn't configured yet.\n\nTo turn this on: create an OAuth Client ID in Google Cloud Console (APIs & Services → Credentials → OAuth Client ID → Web application), add your Netlify domain under Authorized JavaScript origins, then paste the Client ID into GOOGLE_CLIENT_ID at the top of js/main.js.\n\nNote: this gives client-side sign-in only — persistent accounts still need a backend.");
+      alert("Google Sign-In isn't configured yet.\n\nTo turn this on: create an OAuth Client ID in Google Cloud Console (APIs & Services → Credentials → OAuth Client ID → Web application), add your Netlify domain under Authorized JavaScript origins, then paste the Client ID into GOOGLE_CLIENT_ID at the top of main.js.\n\nNote: this gives client-side sign-in only — persistent accounts still need a backend.");
     });
     return;
   }
