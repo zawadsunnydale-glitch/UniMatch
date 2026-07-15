@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Start Your Admissions — UniMatch</title>
-<meta name="description" content="Choose your path — apply to universities in Bangladesh or abroad.">
+<meta name="description" content="Choose your path — apply to universities in Bangladesh or abroad — and see the matching timelines, tests, and tools.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
       <div class="section-head center reveal">
         <span class="eyebrow" style="justify-content:center;">Admissions</span>
         <h2>Start your admissions process</h2>
-        <p>Most students run both tracks in parallel. Toggle between them below.</p>
+        <p>Most students run both tracks in parallel — a local backup and an abroad reach. Toggle between them below.</p>
       </div>
 
       <div class="path-grid reveal">
@@ -38,25 +38,24 @@
       <div class="section-head reveal">
         <span class="eyebrow">National Track</span>
         <h2>Bangladesh University Pipeline</h2>
+        <p>Key benchmarks for major public, engineering, and private university streams.</p>
       </div>
       <div class="pipeline-flow" id="bdPipeline"></div>
+      
+      <div class="panel-grid reveal" style="margin-top:40px;">
+        <div>
+          <div class="field-block">
+            <span class="field-label">Select University for Prep Materials</span>
+            <select class="input-line" id="bdUniResourceSelect"></select>
+          </div>
+        </div>
+        <div>
+          <div class="result-panel" id="bdResourceResult"></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="abroad" class="pipeline-panel" style="display:none;">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Global Track</span>
-        <h2>Study Abroad Application Pipeline</h2>
-      </div>
-      <div class="pipeline-flow" id="abroadPipeline"></div>
-    </div>
-  </section>
-</main>
-
-<div id="site-footer"></div>
-
-<script src="data.js"></script>
-<script src="main.js"></script>
-</body>
-</html>
+      <div class="section-
