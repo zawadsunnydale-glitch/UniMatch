@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Visa Information Hub — UniMatch</title>
-<meta name="description" content="Student visa criteria, processing times, funds required, and a bank-sponsor solvency calculator for top study destinations.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,14 +11,12 @@
 <div id="site-header" data-active="visa"></div>
 
 <main>
-  <section style="padding-bottom:0;">
+  <section>
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Visa information hub</span>
-        <h2>Student visa criteria, processing times &amp; key steps</h2>
-        <p>Reference figures for planning — always confirm exact numbers and current wait times with the relevant embassy or consulate before applying.</p>
+        <h2>Student visa criteria & processing parameters</h2>
       </div>
-      <div class="feature-note">Live Visa Tracker <span class="badge-soon">roadmap</span> — real-time embassy wait times need a licensed data feed and a backend to poll it; this page ships with the latest figures we've curated by hand instead of a live connection.</div>
       <div class="visa-grid reveal" id="visaGrid"></div>
     </div>
   </section>
@@ -28,58 +25,17 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Bank sponsor calculator</span>
-        <h2>Check how much you need to show, and by when</h2>
-        <p>The single biggest cause of visa rejection in this region is under-prepared bank statements. Use this ledger matrix tool to map maturity windows.</p>
+        <h2>Solvency proof requirement matrix</h2>
       </div>
-      
       <div class="panel-grid">
         <div>
           <div class="field-block">
             <select class="input-line" id="sponsorCountrySelect"></select>
           </div>
-          <div class="field-block">
-            <span class="field-label">Your annual tuition cost (USD)</span>
-            <input type="number" class="input-line" id="inputSponsorTuition" value="30000">
-          </div>
-          <div class="field-block">
-            <span class="field-label">Estimated monthly living cost (USD)</span>
-            <input type="number" class="input-line" id="inputSponsorLiving" value="1200">
-          </div>
         </div>
         <div>
-          <div class="result-panel" id="sponsorResult" style="height:100%;display:flex;flex-direction:column;justify-content:center;"></div>
+          <div class="result-panel" id="sponsorResult"></div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:var(--slate-950);border-top:1px solid var(--slate-900);border-bottom:1px solid var(--slate-900);">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Post-study working rights</span>
-        <h2>OPT &amp; post-study work runway parameters</h2>
-        <p>Pick your destination to see how long you can legally stay and work after finishing your degree — verified July 2026, with sources noted since these rules change.</p>
-      </div>
-      <div class="field-block">
-        <select class="input-line" id="runwayCountrySelect"></select>
-      </div>
-      <div class="result-panel" id="runwayResult"></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Mock visa interview simulator</span>
-        <h2>Practice the questions that actually get asked</h2>
-        <p>Flashcard-style practice for the highest-stakes embassy questions, with a response-quality guide alongside each one — not a script to memorize, but a framework for what makes an answer land well or raise a flag.</p>
-      </div>
-      <div class="pass reveal" id="interviewCard" style="padding:36px;max-width:640px;margin:0 auto;">
-      </div>
-      <div style="text-align:center;margin-top:24px;">
-        <button class="btn btn-ghost btn-sm" id="interviewPrevBtn">← Previous</button>
-        <span id="interviewCounter" style="font-family:var(--font-mono);font-size:.82rem;color:var(--cream-45);margin:0 16px;"></span>
-        <button class="btn btn-teal btn-sm" id="interviewNextBtn">Next →</button>
       </div>
     </div>
   </section>
@@ -87,8 +43,8 @@
 
 <div id="site-footer"></div>
 
-<script src="js/data.js"></script>
-<script src="js/main.js"></script>
-<script src="js/visa.js"></script>
+<script src="data.js"></script>
+<script src="main.js"></script>
+<script src="visa.js"></script>
 </body>
 </html>
