@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UniMatch — Find Your Perfect University</title>
-<meta name="description" content="AI-assisted university matching for HSC, Madrasha and A-Level students.">
+<title>UniMatch — Find Your Perfect University in Minutes</title>
+<meta name="description" content="AI-assisted, 100% free university matching for HSC, Madrasha and A-Level students — no confusing rankings, no paywalls.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,26 +20,31 @@
           <span class="hero-badge">Updated for 2026 Admissions</span>
         </div>
         <h1 class="hero-title">Find your perfect <em>university</em> in minutes.</h1>
-        <p class="hero-sub">AI-powered matches based on your grades, budget, and goals. Built for HSC, Madrasha, and A-Level students.</p>
+        <p class="hero-sub">AI-powered matches based on your grades, budget, and goals — no confusing rankings, no paywalls, no sales calls. Built for HSC, Madrasha, and A-Level students.</p>
         <div class="hero-cta-row">
           <a href="tools.html#quiz" class="btn btn-primary btn-shine">Get Started →</a>
+          <a href="#" class="btn btn-ghost">Sign In</a>
         </div>
+        <ul class="hero-trust">
+          <li>No sign-up required</li>
+          <li>100% Free</li>
+        </ul>
       </div>
       
       <div class="hero-preview-pane">
-        <div class="pass reveal" style="padding:24px;border:1px solid var(--slate-800);background:rgba(10,16,30,.6);">
-          <div style="display:flex;justify-content:between;align-items:center;margin-bottom:16px;">
-            <span class="field-label" style="margin:0;">Your top match</span>
-            <span class="badge badge-teal">94% Fit</span>
+        <div class="pass reveal" style="padding:24px;border:1px solid var(--line);background:var(--bg-soft);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+            <span class="field-label" style="margin:0;" id="heroTicketLabel">Your top match</span>
+            <span class="match-pct" id="heroTicketScore">94% Fit</span>
           </div>
-          <h3 style="margin-bottom:4px;font-size:1.25rem;">Take the quiz to see it here</h3>
-          <p style="font-size:.85rem;color:var(--cream-45);margin-bottom:16px;">No fabricated results — this stays empty until you tell us your goals.</p>
+          <h3 style="margin-bottom:4px;font-size:1.25rem;" id="heroTicketUni">Take the quiz to see it here</h3>
+          <p style="font-size:.85rem;color:var(--cream-45);margin-bottom:16px;" id="heroTicketLoc">No fabricated results — this updates dynamically once matching data exists.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section style="background:var(--slate-955);border-top:1px solid var(--slate-900);border-bottom:1px solid var(--slate-900);">
+  <section style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
     <div class="wrap">
       <div class="section-head center reveal">
         <span class="eyebrow" style="justify-content:center;">Built differently</span>
@@ -48,14 +54,14 @@
       
       <div style="max-width:680px;margin:0 auto 50px auto;" class="reveal">
         <div class="search-input-wrap">
-          <input type="text" class="search-input" id="homeSearchInput" placeholder="Describe your dream university layout...">
+          <input type="text" class="search-input" id="homeSearchInput" placeholder="e.g. affordable engineering programs in Germany...">
           <button class="search-submit" id="homeSearchBtn">→</button>
         </div>
       </div>
     </div>
   </section>
 
-  <section style="background:var(--slate-900);">
+  <section>
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Career subjects</span>
@@ -64,11 +70,34 @@
       <div class="career-grid reveal" id="homeCareerGrid"></div>
     </div>
   </section>
+
+  <section style="background:var(--bg-soft);border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow" style="justify-content:center;">Admissions</span>
+        <h2>Start your admissions process</h2>
+        <p>Choose your path and begin your application journey to universities in Bangladesh or abroad.</p>
+      </div>
+      <div class="path-grid reveal">
+        <a href="admissions.html#bd" class="path-card bd">
+          <h3>🎓 Apply to Universities in Bangladesh</h3>
+          <p>Explore public and private universities under the National Curriculum, with direct admission timelines.</p>
+          <span class="btn btn-ghost" style="border-color:var(--line);width:fit-content;">Start here →</span>
+        </a>
+        <a href="admissions.html#abroad" class="path-card abroad">
+          <h3>🌐 Apply to Universities Abroad</h3>
+          <p>Match your grades and budget to top-ranked universities across the US, UK, EU, and Asia-Pacific.</p>
+          <span class="btn btn-ghost" style="border-color:var(--line);color:#fff;width:fit-content;">Start here →</span>
+        </a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <div id="site-footer"></div>
 
 <script src="data.js"></script>
 <script src="main.js"></script>
+<script src="home.js"></script>
 </body>
 </html>
