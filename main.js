@@ -1,6 +1,4 @@
-/* Shared chrome: header + footer injected so every page stays in sync,
-   plus small progressive-enhancement behaviours. */
-
+/* Shared chrome: header + footer injected so every page stays in sync */
 const GOOGLE_CLIENT_ID = "YOUR_GOOGLE_OAUTH_CLIENT_ID.apps.googleusercontent.com";
 
 function decodeJwt(token){
@@ -37,15 +35,19 @@ function renderSignInState(){
         <img src="${user.picture}" alt="" style="width:20px;height:20px;border-radius:50%;">
         ${user.name.split(" ")[0]} · Sign out
       </button>`;
-    document.getElementById("signOutBtn").addEventListener("click", signOut);
+    const sBtn = document.getElementById("signOutBtn");
+    if (sBtn) sBtn.addEventListener("click", signOut);
     return;
   }
 
   if (!configured){
     slot.innerHTML = `<button class="btn btn-ghost btn-sm" id="signInBtn">Sign In</button>`;
-    document.getElementById("signInBtn").addEventListener("click", () => {
-      alert("Google Sign-In isn't configured yet.\n\nTo turn this on: create an OAuth Client ID in Google Cloud Console (APIs & Services → Credentials → OAuth Client ID → Web application), add your Netlify domain under Authorized JavaScript origins, then paste the Client ID into GOOGLE_CLIENT_ID at the top of main.js.\n\nNote: this gives client-side sign-in only — persistent accounts still need a backend.");
-    });
+    const sBtn = document.getElementById("signInBtn");
+    if (sBtn) {
+      sBtn.addEventListener("click", () => {
+        alert("Google Sign-In isn't configured yet.\n\nTo turn this on: create an OAuth Client ID in Google Cloud Console, add your domain under Authorized JavaScript origins, then paste the Client ID into GOOGLE_CLIENT_ID at the top of main.js.");
+      });
+    }
     return;
   }
 
@@ -80,13 +82,8 @@ function renderHeader(active){
   return `
   <header class="site-header">
     <div class="wrap">
-      <a href="index.html" class="brand">
-        <span class="brand-mark">UM</span>
-        UniMatch
-      </a>
-      <nav class="main-nav" aria-label="Primary">
-        ${nav}
-      </nav>
+      <a href="index.html" class="brand"><span class="brand-mark">UM</span>UniMatch</a>
+      <nav class="main-nav" aria-label="Primary">${nav}</nav>
       <div class="header-actions">
         <span id="signInSlot"></span>
         <a href="admissions.html" class="btn btn-primary btn-sm btn-shine">Get Started</a>
@@ -95,9 +92,9 @@ function renderHeader(active){
         </button>
       </div>
     </div>
-    <div id="mobileNav" style="display:none;border-top:1px solid var(--line);background:var(--parchment);">
+    <div id="mobileNav" style="display:none;border-top:1px solid var(--line);background:var(--bg-soft);">
       <div class="wrap" style="padding:18px 20px;display:flex;flex-direction:column;gap:16px;">
-        ${links.map(l=>`<a href="${l.href}" style="font-weight:600;">${l.label}</a>`).join("")}
+        ${links.map(l=>`<a href="${l.href}" style="font-weight:600;color:var(--cream);">${l.label}</a>`).join("")}
       </div>
     </div>
   </header>`;
